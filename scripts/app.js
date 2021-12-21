@@ -30,6 +30,6 @@ setTimeout(function(){
     let li = document.getElementsByClassName("li-class");
     console.log(li);
     for(let i = 0; i < li.length; i++) {
-      li.classList.remove("pause");
+      li[i].classList.remove("pause");
     }
 },500);

@@ -109,7 +109,7 @@ a:hover {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 #icon-list-text li img:not(:hover) {
