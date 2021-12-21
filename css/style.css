@@ -4,15 +4,19 @@
     padding: 0;
     font-family:Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    
+
 }
- 
-body  {
+
+body {
     background-color: rosybrown;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+}
+
+.preload * {
+animation-duration: 0s !important;
+-webkit-animation-duration: 0s !important;
 }
 
 header h1, h4 {
@@ -25,7 +29,7 @@ header {
    display: flex;
    height: 5rem;
    width: 80rem;
-   background-color: royalblue; 
+   background-color: royalblue;
    justify-content: center;
 }
 
@@ -38,9 +42,6 @@ a:hover {
     color: azure;
 }
 
-
-
-
 .grid-container {
     display: grid;
     grid-template-columns:auto auto auto;
@@ -51,11 +52,11 @@ a:hover {
     list-style: none;
 }
 
-#hover-list{    
+#hover-list{
     display: grid;
     width:15rem;
     height: 49.5rem;
-    background-color: chartreuse;       
+    background-color: chartreuse;
 }
 
 #icon-list-text {
@@ -64,49 +65,97 @@ a:hover {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    
+
 }
 
 #icon-list-text li {
-    
+
     display: flex;
-    align-items: center;       
+    align-items: center;
     margin-bottom: .8rem;
 }
 
-#icon-list-text li a {    
-    display: flex;
-    padding: .5rem;
+@keyframes onIconHover {
+  from {
+    height: 32px;
+    width: 32px;
+  }
+  /*0%{transform: scale(1)}
+  50%{transform: scale(1.2)}*/
+  to {
+    height: 100%;
+    width: 25%;
+  }
+}
 
+@keyframes offIconHover {
+  from {
+    height: 100%;
+    width: 25%;
+  }
+  to {
+    height: 32px;
+    width: 32px;
+  }
+
+}
+
+.pause {
+  animation: none;
+}
+
+#icon-list-text li img:hover {
+  animation: onIconHover;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  cursor: crosshair;
+}
+
+#icon-list-text li img:not(:hover) {
+  animation: offIconHover;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  cursor: crosshair;
+}
+
+#icon-list-text li a {
+  display: flex;
+  padding: .5rem;
+}
+
+#icon-list-text li a:hover {
+  cursor: pointer;
 }
 
 .middle-container{
-    display: grid;
-    width: 50rem;
-    height: 49.5;
-    background-color: crimson;
+  display: grid;
+  width: 50rem;
+  height: 49.5;
+  background-color: crimson;
 }
 
 .right-container{
-    display: grid;
-    width: 15rem;
-    height: 49.5rem;
-    background-color: blue;
+  display: grid;
+  width: 15rem;
+  height: 49.5rem;
+  background-color: blue;
 }
 
 .right-top,
 .right-middle,
 .right-bottom {
-    width: 100%;
+  width: 100%;
 }
 
 .right-middle img {
-    width: 100%;
+  width: 100%;
 }
 
 footer{
-    display: flex;
-    height: 5rem;
-    width: 80rem;
-    background-color: chocolate;
+  display: flex;
+  height: 5rem;
+  width: 80rem;
+  background-color: chocolate;
 }
