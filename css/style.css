@@ -141,7 +141,7 @@ a:hover {
 .mid-bottom{
   display: flex;
   background-color: #418CE0;
-  
+
 }
 .right-container{
   display: grid;
@@ -214,7 +214,6 @@ span {
   width: 100%;
   height: calc(100% / 3);
   display:flex;
-  background-color: #369FE0;
   border: 2px solid black;
   justify-content: center;
   align-items: center;
@@ -222,7 +221,7 @@ span {
 
 span:hover {
   cursor: pointer;
-  background-color: #415CE0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .chatbox-container {
@@ -239,6 +238,7 @@ span:hover {
   width:60%;
   border:4px solid #415CE0;
   background:lightgrey;
+  background-color: #369FE0;
   align-items: flex-start;
 }
 
@@ -266,7 +266,7 @@ span:hover {
   display: flex;
  background-color: #369FE0;
  width: 100%;
- height: 20%;  
+ height: 20%;
 }
 
 .conversation {
@@ -275,4 +275,3 @@ span:hover {
   width:100%;
   background:white;
 }
-
