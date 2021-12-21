@@ -1,78 +1,77 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family:Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 
 }
 
 body {
-    background-color: rosybrown;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: rosybrown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .preload * {
-animation-duration: 0s !important;
--webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
 }
 
 header h1, h4 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 header {
-    margin-top: 3rem;
-   display: flex;
-   height: 5rem;
-   width: 80rem;
-   background-color: royalblue;
-   justify-content: center;
+  margin-top: 3rem;
+  display: flex;
+  height: 5rem;
+  width: 80rem;
+  background-color: royalblue;
+  justify-content: center;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-    color: azure;
+  color: azure;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns:auto auto auto;
-    width: 80rem;
+  display: grid;
+  grid-template-columns:auto auto auto;
+  width: 80rem;
 }
 
 .grid-container li {
-    list-style: none;
+  list-style: none;
 }
 
 #hover-list{
-    display: grid;
-    width:15rem;
-    height: 49.5rem;
-    background-color: chartreuse;
+  display: grid;
+  width:15rem;
+  height: 49.5rem;
+  background-color: chartreuse;
 }
 
 #icon-list-text {
-    width: 15rem;
+  width: 15rem;
     padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
 }
 
 #icon-list-text li {
-
-    display: flex;
-    align-items: center;
-    margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: .8rem;
 }
 
 @keyframes onIconHover {
@@ -80,8 +79,6 @@ a:hover {
     height: 32px;
     width: 32px;
   }
-  /*0%{transform: scale(1)}
-  50%{transform: scale(1.2)}*/
   to {
     height: 100%;
     width: 25%;
