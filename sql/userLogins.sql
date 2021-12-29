@@ -18,12 +18,12 @@ GRANT ALL PRIVILEGES
     ON *.*
     TO 'user'@'%'
 ;
+
 --
 -- Drop tables in correct order
 --
 DROP TABLE IF EXISTS user_stats;
 DROP TABLE IF EXISTS user_logins;
-
 
 --
 -- Create table for user logins
