@@ -1,13 +1,23 @@
 --
 -- Create database
+-- Use database
 --
 CREATE DATABASE IF NOT EXISTS rpg_game;
-
---
--- Use Database rpg_game
---
 use rpg_game;
 
+-- Skapa en användare user med lösenordet pass och ge tillgång oavsett
+-- hostnamn.
+CREATE USER IF NOT EXISTS 
+	'user'@'%'
+IDENTIFIED BY 
+	'pass'
+;
+
+-- Ge användaren alla rättigheter på alla databaser.
+GRANT ALL PRIVILEGES
+    ON *.*
+    TO 'user'@'%'
+;
 --
 -- Drop tables in correct order
 --
@@ -92,7 +102,6 @@ DELIMITER ;
 -- Trigger for creating user base
 --
 DROP TRIGGER IF EXISTS create_user_base;
-
 CREATE TRIGGER create_user_base
 AFTER INSERT
 ON user_logins FOR EACH ROW
