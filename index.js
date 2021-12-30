@@ -1,20 +1,10 @@
-/*let staticList = document.getElementById("static-list");
- let iconList = document.querySelector('#icon-list');
-
-iconList.addEventListener('mouseover', function () {
-    document.querySelector('icon-list-hidden').style.display = ""
-})
-
-staticList.addEventListener("mouseenter", function() {
-    document.querySelector('#hover-list').style.display = "flex";
-    staticList.style.display = "none";
-})
-
-staticList.addEventListener('mouseleave', function() {
-    document.querySelector('#hover-list').style.display = "none";
-    staticList.style.display = "flex";
-})*/
 (function () {
+
+module.exports = {
+    showUsers: showUsers,
+};
+
+
 
 const mysql  = require("promise-mysql");
 const config = require("./config/db/rpg_game.json");
@@ -33,9 +23,15 @@ let db;
     });
 })();
 
+async function showUsers() {
+    let sql = `CALL show_users();`;
+    let res;
 
-setTimeout(function(){
-    document.body.className="";
-},1000);
+    res = await db.query(sql);
+    //console.log(res);
+    console.info(`SQL: ${sql} got ${res.length} rows.`);
+
+    return res[0];
+}
 
 })();

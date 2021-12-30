@@ -127,4 +127,18 @@ UPDATE user_stats
     
 SELECT * FROM user_stats;
 
+--
+-- Create procedure for create user
+--
+DROP PROCEDURE IF EXISTS show_users;
+DELIMITER ;;
+CREATE PROCEDURE show_users(
+
+)
+BEGIN
+    SELECT * FROM user_logins ORDER BY id asc;
+END
+;;
+DELIMITER ;
+
 
