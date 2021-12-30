@@ -1,4 +1,4 @@
-import { showUsers } from "..index.js";
+import { showUsers } from '../index.js';
 (function () {
 /*const rpg_game = require("./index.js");*/
 

@@ -1,9 +1,6 @@
-(function () {
+modules.export { showUsers };
 
-module.exports = {
-    showUsers: showUsers,
-};
-
+/*(function () {*/
 
 
 const mysql  = require("promise-mysql");
@@ -34,4 +31,4 @@ async function showUsers() {
     return res[0];
 }
 
-})();
+/*})();*/
