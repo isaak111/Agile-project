@@ -1,3 +1,17 @@
+import { showUsers } from "../index.js";
+(function () {
+
+/*const rpg_game = require("./index.js");*/
+
+showUsers();
+
+/*setTimeout(function(){
+    document.body.className="";
+},1000);*/
+
+})();
+
+
 /*let staticList = document.getElementById("static-list");
  let iconList = document.querySelector('#icon-list');
 
@@ -14,14 +28,3 @@ staticList.addEventListener('mouseleave', function() {
     document.querySelector('#hover-list').style.display = "none";
     staticList.style.display = "flex";
 })*/
-(function () {
-
-const rpg_game = require("./index.js");
-
-showUsers();
-
-/*setTimeout(function(){
-    document.body.className="";
-},1000);*/
-
-})();
