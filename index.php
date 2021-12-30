@@ -34,6 +34,31 @@
                 </form>
                 </div>
             </div>
+            <?php
+
+            $servername = "localhost";
+
+            $username = "user";
+
+            $password = "pass";
+
+            $db = "rpg_game";
+
+            // Create connection
+
+            $conn = mysqli_connect($servername, $username, $password, $db);
+
+            // Check connection
+
+            if (!$conn) {
+
+            die("Connection failed: " . mysqli_connect_error());
+
+            }
+
+            echo "Connected successfully";
+
+            ?>
             <!--Main dynamic container-->
         </div>
         <div class="right-container">
