@@ -1,4 +1,6 @@
-modules.export { showUsers };
+module.exports = {
+    showUsers: showUsers,
+};
 
 /*(function () {*/
 
