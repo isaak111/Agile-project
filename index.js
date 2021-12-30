@@ -17,7 +17,7 @@ staticList.addEventListener('mouseleave', function() {
 (function () {
 
 const mysql  = require("promise-mysql");
-const config = require("../config/db/rpg_game.json");
+const config = require("./config/db/rpg_game.json");
 let db;
 
 /**

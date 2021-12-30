@@ -2,10 +2,10 @@
   "name": "agile-project",
   "version": "1.0.0",
   "description": "Det är najs..",
-  "main": "./scripts/app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./scripts/app.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
