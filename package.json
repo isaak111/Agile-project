@@ -2,10 +2,10 @@
   "name": "agile-project",
   "version": "1.0.0",
   "description": "Det är najs..",
-  "main": "index.js",
+  "main": "./scripts/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node ./scripts/app.js"
   },
   "repository": {
     "type": "git",
@@ -14,11 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-  "body-parser": "^1.18.3",
-  "ejs": "^2.7.4",
-  "express": "^4.16.4",
   "mysql": "^2.16.0",
-  "nodemon": "^2.0.7",
   "promise-mysql": "^3.3.1"
   },
   "bugs": {
