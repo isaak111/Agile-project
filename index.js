@@ -1,4 +1,4 @@
-import mysql from 'promise-mysql';
+import mysql from './node_modules/promise-mysql/index.js';
 import config from "./config/db/rpg_game.js";
 
 console.log(config.host);
