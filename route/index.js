@@ -8,11 +8,11 @@ const router     = express.Router();
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const rpg_game   = require("../src/rpg_game.js");
-const sitename   = "| Cyklarens Van";
+const sitename   = "| not Star wars TM";
 
 module.exports = router;
 
-router.get("/index", (req, res) => {
+router.get("/", (req, res) => {
     let data = {
         title: `Welcome ${sitename}`
     };
