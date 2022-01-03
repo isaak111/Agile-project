@@ -34,7 +34,7 @@
                 </form>
                 </div>
             </div>
-            <?php /*
+            <?php
 
             $servername = "localhost";
 
@@ -58,7 +58,7 @@
 
             echo "Connected successfully";
 
-            */?>
+            ?>
             <!--Main dynamic container-->
         </div>
         <div class="right-container">

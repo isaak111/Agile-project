@@ -1,13 +1,5 @@
-import mysql from './node_modules/promise-mysql/index.js';
-import config from "./config/db/rpg_game.js";
-
-console.log(config.host);
-/*import mysql from './node_modules/promise-mysql';*/
-
-(function () {
-
-/*const mysql  = require("promise-mysql");
-const config = require("./config/db/rpg_game.json");*/
+const mysql  = require("promise-mysql");
+const config = require("./config/db/rpg_game.json");
 let db;
 
 /**
@@ -34,10 +26,6 @@ async function showUsers() {
     return res[0];
 }
 
-/*module.exports = {
+module.exports = {
   showUsers: showUsers,
-};*/
-
-/* default showUsers;*/
-
-})();
+};
