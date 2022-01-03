@@ -8,12 +8,13 @@
     "clean": "rm -rf node_modules package-lock.json",
     "start": "nodemon index.js"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.15",
-    "promise-mysql": "^3.3.2"
+    "promise-mysql": "^3.3.2",
+    "nodemon": "^2.0.7"
   },
   "bugs": {
     "url": "https://github.com/isaak111/Agile-project/issues"
