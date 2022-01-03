@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>Delete gruppset</h1>
+
+<% res = res[0] %>
+
+<p>This is details for the gruppset <%= res.gruppset %>.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<form class="label-left" method="post" action="/eshop/edit">
+    <fieldset>
+        <legend>Delete Gruppset</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id" readonly value="<%= res.id %>">
+
+        <% if (res.gruppset != null) { %>
+        <label for="name">Gruppset</label>
+        <input id="gruppset" type="text" name="gruppset" readonly value="<%= res.gruppset %> "> <% } %>
+
+        <input type="submit" name="doit" value="Delete">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

@@ -1,0 +1,24 @@
+<%- include("header", {title: title}); %>
+
+<h1>Categories</h1>
+
+<p>Here is the categories for the products.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Category</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.Tables_in_eshop %></td>
+        <td>
+            <a href="/eshop/edit/<%= row.Tables_in_eshop %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/<%= row.Tables_in_eshop %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

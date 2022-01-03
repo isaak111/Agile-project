@@ -1,0 +1,30 @@
+<%- include("header", {title: title}); %>
+
+<h1>Delete pedal</h1>
+
+<% res = res[0] %>
+
+<p>This is details for the pedal <%= res.pedal %>.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<form class="label-left" method="post" action="/eshop/edit">
+    <fieldset>
+        <legend>Delete Pedal</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id" readonly value="<%= res.id %>">
+
+        <% if (res.märke != null) { %>
+        <label for="name">Märke</label>
+        <input id="märke" type="text" name="märke" readonly value="<%= res.märke %> "> <% } %>
+
+        <% if (res.pedal != null) { %>
+        <label for="name">Pedal</label>
+        <input id="pedal" type="text" name="pedal" readonly value="<%= res.pedal %> "> <% } %>
+
+        <input type="submit" name="doit" value="Delete">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

@@ -1,0 +1,30 @@
+<%- include("header", {title: title}); %>
+
+<h1>Delete Ramkit</h1>
+
+<% res = res[0] %>
+
+<p>This is details for the ramkit <%= res.ramkit %>.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<form class="label-left" method="post" action="/eshop/edit">
+    <fieldset>
+        <legend>Delete Ramkit</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id" readonly value="<%= res.id %>">
+
+        <% if (res.märke != null) { %>
+        <label for="name">Märke</label>
+        <input id="märke" type="text" name="märke" readonly value="<%= res.märke %> "> <% } %>
+
+        <% if (res.ramkit != null) { %>
+        <label for="name">Ramkit</label>
+        <input id="ramkit" type="text" name="ramkit" readonly value="<%= res.ramkit %> "> <% } %>
+
+        <input type="submit" name="doit" value="Delete">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

@@ -1,0 +1,48 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit komponenter details</h1>
+
+<% res = res[0] %>
+
+<p>This is details for the komponent <%= res.id %>.</p>
+
+<pre><%= JSON.stringify(res, null, 4) %></pre>
+
+<pre><% typeof res.märke %></pre>
+
+<form class="label-left" method="post" action="/eshop/edit">
+    <fieldset>
+        <legend>Edit Komponent</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id" readonly value="<%= res.id %>">
+
+        <% if (res.märke != null) { %>
+        <label for="name">Märke</label>
+        <input id="märke" type="text" name="märke" value="<%= res.märke %> "> <% } %>
+
+        <% if (res.ramkit != null) { %>
+        <label for="name">Ramkit</label>
+        <input id="ramkit" type="text" name="ramkit" value="<%= res.ramkit %> "> <% } %>
+
+        <% if (res.hjulset != null) { %>
+        <label for="name">Hjulset</label>
+        <input id="hjulset" type="text" name="hjulset" value="<%= res.hjulset %> "> <% } %>
+
+        <% if (res.gruppset != null) { %>
+        <label for="name">Gruppset</label>
+        <input id="gruppset" type="text" name="gruppset" value="<%= res.gruppset %> "> <% } %>
+
+        <% if (res.sadel != null) { %>
+        <label for="name">Sadel</label>
+        <input id="sadel" type="text" name="sadel" value="<%= res.sadel %> "> <% } %>
+
+        <% if (res.pedal != null) { %>
+        <label for="name">Pedal</label>
+        <input id="pedal" type="text" name="pedal" value="<%= res.pedal %> "> <% } %>
+
+        <input type="submit" name="doit" value="Edit">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

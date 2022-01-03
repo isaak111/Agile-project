@@ -1,0 +1,28 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit Ramkit details</h1>
+
+<p>This is the details for Ramkit. <%#= product %></p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Märke</th>
+        <th>Ramkit</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/eshop/edit/ramkit/<%= row.id %>"><%= row.id %></a></td>
+        <td><%= row.märke %></td>
+        <td><%= row.ramkit %></td>
+        <td>
+            <a href="/eshop/edit/ramkit/<%= row.id %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/ramkit/<%= row.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

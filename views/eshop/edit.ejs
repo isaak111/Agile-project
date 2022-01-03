@@ -1,0 +1,23 @@
+<%- include("header", {title: title}); %>
+
+<h1>Categories</h1>
+
+<p>Choose from which category you wish to edit from</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Category</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.category %></td>
+        <td>
+            <a href="/eshop/edit/<%= row.category %>"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

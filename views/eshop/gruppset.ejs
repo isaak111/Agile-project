@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit Gruppset details</h1>
+
+<p>This is the details for Gruppset. <%#= product %></p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Gruppset</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/eshop/edit/gruppset/<%= row.id %>"><%= row.id %></a></td>
+        <td><%= row.gruppset %></td>
+        <td>
+            <a href="/eshop/edit/gruppset/<%= row.id %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/gruppset/<%= row.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

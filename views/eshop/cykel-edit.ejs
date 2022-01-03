@@ -1,0 +1,41 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit product details</h1>
+
+<% res = res[0] %>
+
+<p>This is details for the cykel <%= res.cykel %>.</p>
+
+<h3>Dont ruin your masterpiece.</h3>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<form class="label-left" method="post" action="/eshop/edit">
+    <fieldset>
+        <legend>Edit Cykel</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id" readonly value="<%= res.cykel %>">
+
+        <label for="name">Märke</label>
+        <input id="märke" type="text" name="märke" readonly value="<%= res.märke %>">
+
+        <label for="name">Ramkit</label>
+        <input id="ramkit" type="text" name="ramkit" readonly value="<%= res.ramkit %>">
+
+        <label for="name">Hjulset</label>
+        <input id="hjulset" type="text" name="hjulset" readonly value="<%= res.hjulset %>">
+
+        <label for="name">Gruppset</label>
+        <input id="gruppset" type="text" name="gruppset" readonly value="<%= res.gruppset %>">
+
+        <label for="name">Sadel</label>
+        <input id="sadel" type="text" name="sadel" readonly value="<%= res.sadel %>">
+
+        <label for="name">Pedal</label>
+        <input id="pedal" type="text" name="pedal" readonly value="<%= res.pedal %>">
+
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

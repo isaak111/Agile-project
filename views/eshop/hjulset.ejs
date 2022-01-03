@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit Hjulset details</h1>
+
+<p>This is the details for Hjulset. <%#= product %></p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Hjulset</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/eshop/edit/hjulset/<%= row.id %>"><%= row.id %></a></td>
+        <td><%= row.hjulset %></td>
+        <td>
+            <a href="/eshop/edit/hjulset/<%= row.id %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/hjulset/<%= row.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

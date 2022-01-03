@@ -1,0 +1,30 @@
+<%- include("header", {title: title}); %>
+
+<h1>Edit Sadel details</h1>
+
+<p>This is the details for Sadel. <%#= product %></p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Märke</th>
+        <th>Typ</th>
+        <th>Namn</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/eshop/edit/sadel/<%= row.id %>"><%= row.id %></a></td>
+        <td><%= row.märke %></td>
+        <td><%= row.typ %></td>
+        <td><%= row.namn %></td>
+        <td>
+            <a href="/eshop/edit/sadel/<%= row.id %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/sadel/<%= row.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>
