@@ -1,9 +1,7 @@
-module.exports = {
-    showUsers: showUsers,
-};
-
-/*(function () {*/
-
+(function () {
+/*module.exports = {
+  showUsers: showUsers,
+};*/
 
 const mysql  = require("promise-mysql");
 const config = require("./config/db/rpg_game.json");
@@ -33,4 +31,8 @@ async function showUsers() {
     return res[0];
 }
 
-/*})();*/
+module.exports = {
+  showUsers: showUsers,
+};
+
+})();

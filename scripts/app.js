@@ -1,8 +1,7 @@
-import { showUsers } from '../index.js';
 (function () {
-/*const rpg_game = require("./index.js");*/
+/*const rpg_game = require("./index.js");
 
-showUsers();
+showUsers();*/
 
 /*setTimeout(function(){
     document.body.className="";
