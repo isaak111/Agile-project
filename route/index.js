@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
     data.res = await rpg_game.showUser(1);
 
-    data.userInfo = await rpg_game.user_stats();
+    data.stats = await rpg_game.showStats(1);
 
     res.render("../views/index", data);
 });
@@ -30,6 +30,8 @@ router.get("/landing", async (req, res) => {
     };
 
     data.res = await rpg_game.showUser(2);
+
+    data.stats = await rpg_game.showStats(2);
 
     /*console.log(data);*/
 

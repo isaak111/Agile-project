@@ -49,6 +49,8 @@ COLLATE
 CREATE TABLE user_stats
 (
 	id INT NOT NULL,
+    `level` INT NOT NULL,
+    experience INT NOT NULL,
 	money INT NOT NULL,
     health INT NOT NULL,
 	strength INT NOT NULL,
@@ -87,13 +89,15 @@ DELIMITER ;
 DROP PROCEDURE IF EXISTS create_user;
 DELIMITER ;;
 CREATE PROCEDURE create_user(
+	a_level INT,
+    a_experience INT,
     a_health INT,
     a_strength INT,
     a_agility INT,
     a_weapon_skill INT
 )
 BEGIN
-    INSERT INTO user_stats (health, strength, agility, weapon_skill) VALUES (a_health, a_strength, a_agility, a_weapon_skill);
+    INSERT INTO user_stats (level, experience, health, strength, agility, weapon_skill) VALUES (a_level, a_experience, a_health, a_strength, a_agility, a_weapon_skill);
 END
 ;;
 DELIMITER ;
@@ -121,11 +125,14 @@ INSERT INTO user_logins VALUES
 -- Add standard test character
 --
 UPDATE user_stats 
-	SET health = 25,
+	SET 
+    `level` = 1,
+    experience = 0,
+    health = 25,
     strength = 50,
     agility = 20,
     weapon_skill = 35
-    WHERE id = 1; -- user_id
+    WHERE id = 1 AND 2 AND 3 AND 4; -- user_id
     
 SELECT * FROM user_stats;
 
@@ -144,3 +151,30 @@ END
 DELIMITER ;
 
 CALL show_users(1);
+
+--
+-- Create procedure for showing user stats
+--
+DROP PROCEDURE IF EXISTS show_user_stats;
+DELIMITER ;;
+CREATE PROCEDURE show_user_stats(
+	a_id VARCHAR(40)
+)
+BEGIN
+	SELECT 
+		money as Money,
+        health as Health,
+        strength as Strength,
+        agility as Agility,
+        weapon_skill as 'Weapon Skill'
+	FROM 
+		user_stats 
+	WHERE 
+		id = a_id;
+END
+;;
+DELIMITER ;
+
+
+
+

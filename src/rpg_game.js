@@ -1,5 +1,6 @@
 module.exports = {
-  showUser: showUser
+  showUser: showUser,
+  showStats: showStats
 };
 
 const mysql  = require('mysql');
@@ -44,6 +45,25 @@ async function showProducts() {
 async function showUser(userId) {
   return new Promise((resolve, reject) => {
     db.query(`SELECT * FROM user_logins;`, (err, res) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(res[userId - 1]);
+    });
+  });
+}
+
+async function showStats(userId) {
+  return new Promise((resolve, reject) => {
+    db.query(`SELECT
+      level,
+      experience,
+      money,
+      health,
+      strength,
+      agility,
+      weapon_skill
+      FROM user_stats;`, (err, res) => {
       if (err) {
         reject(err);
       }
