@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         title: `Welcome ${sitename}`
     };
 
-    data.res = await rpg_game.showUsers();
+    data.res = await rpg_game.showUser(1);
 
     res.render("../views/index", data);
 });
@@ -27,10 +27,9 @@ router.get("/landing", async (req, res) => {
         title: `Product categories ${sitename}`
     };
 
-    data.res = await rpg_game.selectAll(1);
-
-    console.log(data);
-
+    data.res = await rpg_game.showUser(2);
+    
+    /*console.log(data);*/
 
     res.render("../views/landing", data);
 });

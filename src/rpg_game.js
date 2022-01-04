@@ -1,6 +1,5 @@
 module.exports = {
-  showUsers: showUsers,
-  selectAll: selectAll
+  showUser: showUser
 };
 
 const mysql  = require('mysql');
@@ -20,8 +19,8 @@ let db;
     });
 })();
 
-async function showUsers() {
-    let sql = `CALL show_users();`;
+/*async function showUsers() {
+    let sql = `CALL show_users(?);`;
     let res;
 
     res = await db.query(sql);
@@ -29,7 +28,7 @@ async function showUsers() {
     console.info(`SQL: ${sql} got ${res.length} rows.`);
 
     return res[0];
-}
+}*/
 
 async function showProducts() {
     let sql = `CALL show_products();`;
@@ -42,15 +41,13 @@ async function showProducts() {
     return res[0];
 }
 
-let userId = 1;
-
-async function selectAll(userId) {
+async function showUser(userId) {
   return new Promise((resolve, reject) => {
-    db.query(`CALL show_users(?);`, (err, res) => {
+    db.query(`SELECT * FROM user_logins;`, (err, res) => {
       if (err) {
         reject(err);
       }
-      resolve(res);
+      resolve(res[userId - 1]);
     });
   });
 }
