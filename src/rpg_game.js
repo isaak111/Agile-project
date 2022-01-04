@@ -1,5 +1,6 @@
 module.exports = {
-  showUsers: showUsers
+  showUsers: showUsers,
+  selectAll: selectAll
 };
 
 const mysql  = require('mysql');
@@ -39,4 +40,15 @@ async function showProducts() {
     console.info(`SQL: ${sql} got ${res.length} rows.`);
 
     return res[0];
+}
+
+async function selectAll() {
+  return new Promise((reoslve, reject) => {
+    db.query("SELECT * FROM user_logins", (err, res) => {
+      if (err) {
+        reject(err);
+      }
+      reoslve(res);
+    });
+  });
 }

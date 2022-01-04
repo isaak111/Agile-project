@@ -113,7 +113,7 @@ ON user_logins FOR EACH ROW
 --
 INSERT INTO user_logins 
 	SET username = 'user',
-    password = 'password';
+    password = 'pass';
     
 --
 -- Add standard test character
@@ -140,4 +140,4 @@ END
 ;;
 DELIMITER ;
 
-
+CALL show_users;
