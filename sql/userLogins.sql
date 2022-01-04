@@ -109,11 +109,13 @@ ON user_logins FOR EACH ROW
         VALUES (NEW.id);
 
 --
--- Add standard test user
+-- Add test users
 --
-INSERT INTO user_logins 
-	SET username = 'user',
-    password = 'pass';
+INSERT INTO user_logins VALUES
+	(default, 'korvin1337', 'korvin1337'),
+    (default, 'smog', 'smog'),
+    (default, 'OSTO80', 'OSTO80'),
+    (default, 'arvid', 'arvid');
     
 --
 -- Add standard test character
@@ -133,11 +135,12 @@ SELECT * FROM user_stats;
 DROP PROCEDURE IF EXISTS show_users;
 DELIMITER ;;
 CREATE PROCEDURE show_users(
+	a_id VARCHAR(40)
 )
 BEGIN
-    SELECT * FROM user_logins;-- ORDER BY id asc;
+    SELECT * FROM user_logins WHERE id = a_id;-- ORDER BY id asc;
 END
 ;;
 DELIMITER ;
 
-CALL show_users;
+CALL show_users(1);

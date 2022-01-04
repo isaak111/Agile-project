@@ -42,13 +42,15 @@ async function showProducts() {
     return res[0];
 }
 
-async function selectAll() {
-  return new Promise((reoslve, reject) => {
-    db.query("SELECT * FROM user_logins", (err, res) => {
+let userId = 1;
+
+async function selectAll(userId) {
+  return new Promise((resolve, reject) => {
+    db.query(`CALL show_users(?);`, (err, res) => {
       if (err) {
         reject(err);
       }
-      reoslve(res[0]);
+      resolve(res);
     });
   });
 }

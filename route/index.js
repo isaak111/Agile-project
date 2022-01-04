@@ -27,7 +27,7 @@ router.get("/landing", async (req, res) => {
         title: `Product categories ${sitename}`
     };
 
-    data.res = await rpg_game.selectAll();
+    data.res = await rpg_game.selectAll(1);
 
     console.log(data);
 
