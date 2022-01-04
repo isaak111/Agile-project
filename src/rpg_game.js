@@ -29,3 +29,14 @@ async function showUsers() {
 
     return res[0];
 }
+
+async function showProducts() {
+    let sql = `CALL show_products();`;
+    let res;
+
+    res = await db.query(sql);
+    //console.log(res);
+    console.info(`SQL: ${sql} got ${res.length} rows.`);
+
+    return res[0];
+}

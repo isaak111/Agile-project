@@ -1,4 +1,4 @@
-<?php include "./static/header.html"?>
+<%- include("header", {title: title}); %>
 
 <body class="preload">
     <header>
@@ -6,16 +6,16 @@
         <h4>SuperDevsTM </h4>
     </header>
     <div class="grid-container">
-        <?php include "./static/nav.html"?>
+        <%- include("nav"); %>
         <!--List items populated by Javascript-->
         <div class="middle-container">
             <div class="mid-top">
-                <img src="./img/spaceport.jpg" alt="">
+                <img src="spaceport.jpg" alt="">
             </div>
             <!--Main dynamic container-->
         </div>
-        <?php include "./static/rightContainer.html"?>
+        <%- include("rightContainer"); %>
         <!--Hero-Section from JavaScript-->
     </div>
 
-<?php include "./static/footer.html"?>
+<%- include("footer"); %>

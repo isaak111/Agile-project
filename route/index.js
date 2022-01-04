@@ -12,12 +12,36 @@ const sitename   = "| not Star wars TM";
 
 module.exports = router;
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
     let data = {
         title: `Welcome ${sitename}`
     };
 
+    console.log(rpg_game);
+
+    console.log(rpg_game.showUsers());
+
+    data.res = await rpg_game.showUsers();
+
+    console.log(data.res);
+
     res.render("../views/index", data);
+});
+
+router.get("/landing", async (req, res) => {
+    let data = {
+        title: `Product categories ${sitename}`
+    };
+
+    console.log(rpg_game);
+
+    console.log(rpg_game.showUsers());
+
+    data.res = await rpg_game.showUsers();
+
+    console.log(data);
+
+    res.render("../views/landing", data);
 });
 
 router.post("/edit/cykel", async (req, res) => {
@@ -25,23 +49,3 @@ router.post("/edit/cykel", async (req, res) => {
 
     res.redirect("../views/index");
 });
-
-/**
- * General routes.
- */
-/*"use strict";
-
-const express = require("express");
-const router  = express.Router();
-
-// Add a route for the path /
-router.get("/", (req, res) => {
-    res.send("Hello World");
-});
-
-// Add a route for the path /about
-router.get("/about", (req, res) => {
-    res.send("About something");
-});
-
-module.exports = router;*/

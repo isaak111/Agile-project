@@ -133,10 +133,9 @@ SELECT * FROM user_stats;
 DROP PROCEDURE IF EXISTS show_users;
 DELIMITER ;;
 CREATE PROCEDURE show_users(
-
 )
 BEGIN
-    SELECT * FROM user_logins ORDER BY id asc;
+    SELECT * FROM user_logins;-- ORDER BY id asc;
 END
 ;;
 DELIMITER ;
