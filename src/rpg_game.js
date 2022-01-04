@@ -48,7 +48,7 @@ async function selectAll() {
       if (err) {
         reject(err);
       }
-      reoslve(res);
+      reoslve(res[0]);
     });
   });
 }
