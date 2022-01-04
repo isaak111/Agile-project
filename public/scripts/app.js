@@ -3,10 +3,12 @@
 /*const rpg_game = require("./index.js");*/
 
 /*console.log(showUsers);*/
+(function () {
+  setTimeout(function(){
+      document.body.className="";
+  },1000);
+})();
 
-/*setTimeout(function(){
-    document.body.className="";
-},1000);*/
 
 /*})();*/
 
